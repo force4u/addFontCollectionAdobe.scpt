@@ -91,6 +91,11 @@ tell application "Font Book"
 			try
 				set listFBFaceCopyrightName to FBFaceLicenseName of listAdditionalnfo
 			end try
+			----許諾用のリストの制御　IPAフォントライセンス
+		else if theLangAns is "IPA" then
+			try
+				set listFBFaceCopyrightName to FBFaceLicenseName of listAdditionalnfo
+			end try
 		end if
 		---もしも、コピーライト情報をしらべて
 		if listFBFaceCopyrightName contains theLangAns then
