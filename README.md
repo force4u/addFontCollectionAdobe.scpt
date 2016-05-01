@@ -5,7 +5,7 @@ addFontCollection.scpt
 20160306 addFontCollection.scptに名称変更
 20160306　待ち時間を変更出来るように変更
 20160308　リストにIPAを追加
-
+20160501 コレクション名をwith propertiesで指定に変更
 フォントブックに登録されているフォントを調べて
 フォントコレクションに登録します。
 
