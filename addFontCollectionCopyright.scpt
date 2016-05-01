@@ -7,7 +7,7 @@ addFontCollection.scpt
 20160306 addFontCollection.scptに名称変更
 20160306　待ち時間を変更出来るように変更
 20160308　リストにIPAを追加
-
+20160501 コレクション名をwith propertiesで指定に変更
 フォントブックに登録されているフォントを調べて
 フォントコレクションに登録します。
 
@@ -51,21 +51,11 @@ tell application "Font Book"
 	if boolFontCollection = false then
 		try
 			---新しいコレクションを作成
-			set objFontCollection to make new font collection
+			set objFontCollection to make new font collection with properties {name:theLangAns}
 		end try
 		---おまじないの１秒
 		delay numWaitTime
-		---作ったコレクション
-		tell objFontCollection
-			---名前を変更
-			set name to theLangAns
-		end tell
-		---おまじないの１秒
-		delay numWaitTime
-		tell font collection theLangAns
-			---ローカライズ用？
-			set displayed name to theLangAns
-		end tell
+		
 	end if
 	-----全てのタイプフェイスを取得　リストに格納
 	set listAllTypeFaces to get every typeface as list
@@ -88,11 +78,6 @@ tell application "Font Book"
 			end try
 			----許諾用のリストの制御　オープンフォントライセンス
 		else if theLangAns is "SIL" then
-			try
-				set listFBFaceCopyrightName to FBFaceLicenseName of listAdditionalnfo
-			end try
-			----許諾用のリストの制御　IPAフォントライセンス
-		else if theLangAns is "IPA" then
 			try
 				set listFBFaceCopyrightName to FBFaceLicenseName of listAdditionalnfo
 			end try
