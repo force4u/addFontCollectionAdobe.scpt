@@ -8,5 +8,3 @@ addFontCollection.scpt
 20160501 コレクション名をwith propertiesで指定に変更
 フォントブックに登録されているフォントを調べて
 フォントコレクションに登録します。
-
-
